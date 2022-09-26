@@ -1,29 +1,29 @@
 const slidList = [{
-        imgSrc: "/images/poniedzialek.jpg",
+        imgSrc: "images/poniedzialek.jpg",
         text: "Miłego poniedziałku",
     },
     {
-        imgSrc: "/images/wtorek.jpeg",
+        imgSrc: "images/wtorek.jpeg",
         text: "Udanego wtorku",
     },
     {
-        imgSrc: "/images/sroda.jpg",
+        imgSrc: "images/sroda.jpg",
         text: "Spokojnej środy",
     },
     {
-        imgSrc: "/images/czwartek.jpg",
+        imgSrc: "images/czwartek.jpg",
         text: "Melodyjnego czwartku",
     },
     {
-        imgSrc: "/images/piatek.jpg",
+        imgSrc: "images/piatek.jpg",
         text: "Imprezowego piątku",
     },
     {
-        imgSrc: "/images/sobota.jpg",
+        imgSrc: "images/sobota.jpg",
         text: "Rodzinnej soboty",
     },
     {
-        imgSrc: "/images/niedziela.jpg",
+        imgSrc: "images/niedziela.jpg",
         text: "Magicznej niedzieli",
     },
 ]
