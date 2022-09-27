@@ -1,45 +1,46 @@
-const slidList = [{
-        imgSrc: "/images/poniedzialek.jpg",
+const slidList = [
+    {
+        imgSrc: "images/poniedzialek.jpg",
         text: "Miłego poniedziałku",
     },
     {
-        imgSrc: "/images/wtorek.jpeg",
+        imgSrc: "images/wtorek.jpeg",
         text: "Udanego wtorku",
     },
     {
-        imgSrc: "/images/sroda.jpg",
+        imgSrc: "images/sroda.jpg",
         text: "Spokojnej środy",
     },
     {
-        imgSrc: "/images/czwartek.jpg",
+        imgSrc: "images/czwartek.jpg",
         text: "Melodyjnego czwartku",
     },
     {
-        imgSrc: "/images/piatek.jpg",
+        imgSrc: "images/piatek.jpg",
         text: "Imprezowego piątku",
     },
     {
-        imgSrc: "/images/sobota.jpg",
+        imgSrc: "images/sobota.jpg",
         text: "Rodzinnej soboty",
     },
     {
-        imgSrc: "/images/niedziela.jpg",
+        imgSrc: "images/niedziela.jpg",
         text: "Magicznej niedzieli",
     },
 ]
 let img = document.querySelector("img.slider");
 const header = document.querySelector("h1.slider");
-const span = [...document.querySelectorAll("span")];
+const spanDots = [...document.querySelectorAll("span")];
 let active = 0;
 const time = 3000;
-let indexElementClick;
+
 
 const changeDot = () => {
-    const activeSpan = span.findIndex(dot =>
+    const activeSpan = spanDots.findIndex(dot =>
         dot.classList.contains("active")
     );
-    span[activeSpan].classList.remove("active");
-    span[active].classList.add("active");
+    spanDots[activeSpan].classList.remove("active");
+    spanDots[active].classList.add("active");
 }
 
 function changeSlide() {
@@ -51,6 +52,7 @@ function changeSlide() {
     header.textContent = slidList[active].text;
     changeDot();
 }
+
 let indexInterval = setInterval(changeSlide, time);
 
 const keyChangeSlide = (e) => {
@@ -72,9 +74,9 @@ window.addEventListener("keydown", keyChangeSlide);
 
 const clickChangeSlide = (e) => {
     // let result = e.target.dataset.index;
-    span.forEach(el => el.classList.remove("active"));
+    spanDots.forEach(el => el.classList.remove("active"));
     e.target.classList.add("active");
-    const result = span.findIndex(clickedDot => clickedDot.classList.contains("active"));
+    const result = spanDots.findIndex(clickedDot => clickedDot.classList.contains("active"));
     clearInterval(indexInterval);
     img.src = slidList[result].imgSrc;
     header.textContent = slidList[result].text;
@@ -82,7 +84,6 @@ const clickChangeSlide = (e) => {
     indexInterval = setInterval(changeSlide, time);
 }
 
-span.forEach((el, index) => {
+spanDots.forEach((el) => {
     el.addEventListener("click", clickChangeSlide);
-    // el.dataset.index = index;
 });
